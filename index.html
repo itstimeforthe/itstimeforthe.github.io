@@ -13,8 +13,11 @@ and open the template in the editor.
         <h1 id="h"> click me to start!</h1>
         <img id="m" alt="sef"  width="400" height="400" src="nice.jpg">
         <p id="d"> click here when you're done! </p>
+        <p id="r" > </p>
         <script src="https://code.jquery.com/jquery-2.1.0.js"> </script>
         <script>
+            var howt = 0 
+            var howc = 0
             var times = 0
             var tell = 9;
             var qwe = 9;
@@ -47,6 +50,7 @@ and open the template in the editor.
                 }
             
            $("#h").click(function (event){
+               howt = howt + 1
                 tell = ("");
                 co = ("");
                 if (times === 0 )
@@ -1158,17 +1162,29 @@ and open the template in the editor.
             po = po + "r";
         } 
             });
+           
+           
+            var headd = document.getElementById('r');
              $("#d").click(function (event){
                 if (po === co)
                 {
                     alert("correct!")
+                    howc++
                     times++
+                    document.getElementById('r').innerHTML = "you have played " + howt + " rounds and have a streak of " + howc + "."
                     po = ("")
+                    
+                   
+                    
+                    
                 }
                  else
                  {
                      alert("simon is dissapointed")
                      po = ("")
+                    
+                     document.getElementById('r').innerHTML = "you have played " + howt + " rounds and have a streak of " + howc + "."
+                    howc = 0
                  }
                  
              });
